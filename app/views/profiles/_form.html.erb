@@ -1,34 +1,63 @@
 <%= simple_form_for(@profile) do |f| %>
   <%= f.error_notification %>
 
+  <div class="row">
+    <div class="col-md-4">
+      <p>Current picture:</p>
+      <%= image_tag(@profile.picture_url(:standard), class: 'img-thumbnail') %>
+      <div class="form-group">
+        <%= f.input :picture, as: :file %>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.input :first_name, input_html: { class: 'form-control'} %>
+           </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.input :last_name, input_html: { class: 'form-control'} %>
+           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <%= f.input :tagline, input_html: { class: 'form-control'} %>
+           </div>
+          <div class="form-group">
+            <%= f.input :info, input_html: { class: 'form-control'} %>
+           </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.input :city, input_html: { class: 'form-control'} %>
+       </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.input :country, input_html: { class: 'form-control'} %>
+       </div>
+    </div>
+    <div class="col-md-4">
+      <div class="form-group">
+        <%= f.input :phone, input_html: { class: 'form-control'} %>
+       </div>
+    </div>
+  </div>
+
   
-  <div class="form-group">
-    <%= f.input :first_name, input_html: { class: 'form-control'} %>
-   </div>
-  <div class="form-group">
-    <%= f.input :last_name, input_html: { class: 'form-control'} %>
-   </div>
-  <div class="form-group">
-    <%= f.input :picture, as: :file, input_html: { class: 'form-control'} %>
-   </div>
-  <div class="form-group">
-    <%= f.input :city, input_html: { class: 'form-control'} %>
-   </div>
-  <div class="form-group">
-    <%= f.input :country, input_html: { class: 'form-control'} %>
-   </div>
-  <div class="form-group">
-    <%= f.input :phone, input_html: { class: 'form-control'} %>
-   </div>
   <div class="form-group">
     <%= f.input :dob, start_year: Date.today.year - 110, end_year: Date.today.year - 8, input_html: { class: 'form-control'} %>
    </div>
-  <div class="form-group">
-    <%= f.input :tagline, input_html: { class: 'form-control'} %>
-   </div>
-  <div class="form-group">
-    <%= f.input :info, input_html: { class: 'form-control'} %>
-   </div>
+  
   <div class="form-group">
     <%= f.input :website, input_html: { class: 'form-control'} %>
    </div>

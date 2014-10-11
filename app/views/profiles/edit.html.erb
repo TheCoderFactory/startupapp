@@ -1,6 +1,20 @@
-<h1>Editing profile</h1>
+<br>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h1 class="panel-title">
+					<span class="glyphicon glyphicon-edit"></span> Edit your profile
+				</h1>
+			</div>
+			<div class="panel-body">
+				<%= render 'form' %>
+			</div>
+		</div>
+	</div>
+</div>
 
-<%= render 'form' %>
+
 
 <%= link_to 'Show', @profile %> |
 <%= link_to 'Back', profiles_path %>
