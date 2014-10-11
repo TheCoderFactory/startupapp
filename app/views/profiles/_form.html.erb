@@ -1,0 +1,53 @@
+<%= simple_form_for(@profile) do |f| %>
+  <%= f.error_notification %>
+
+  
+  <div class="form-group">
+    <%= f.input :first_name, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :last_name, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :picture, as: :file, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :city, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :country, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :phone, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :dob, start_year: Date.today.year - 110, end_year: Date.today.year - 8, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :tagline, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :info, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :website, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :twitter, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :facebook, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :linkedin, input_html: { class: 'form-control'} %>
+   </div>
+  <div class="form-group">
+    <%= f.input :google_plus, input_html: { class: 'form-control'} %>
+   </div>
+  
+  
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

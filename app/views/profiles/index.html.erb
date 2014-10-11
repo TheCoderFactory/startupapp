@@ -1,0 +1,53 @@
+<h1>Listing profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Picture</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Phone</th>
+      <th>Dob</th>
+      <th>Tagline</th>
+      <th>Info</th>
+      <th>Website</th>
+      <th>Twitter</th>
+      <th>Facebook</th>
+      <th>Linkedin</th>
+      <th>Google plus</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profiles.each do |profile| %>
+      <tr>
+        <td><%= profile.first_name %></td>
+        <td><%= profile.last_name %></td>
+        <td><%= profile.picture %></td>
+        <td><%= profile.city %></td>
+        <td><%= profile.country %></td>
+        <td><%= profile.phone %></td>
+        <td><%= profile.dob %></td>
+        <td><%= profile.tagline %></td>
+        <td><%= profile.info %></td>
+        <td><%= profile.website %></td>
+        <td><%= profile.twitter %></td>
+        <td><%= profile.facebook %></td>
+        <td><%= profile.linkedin %></td>
+        <td><%= profile.google_plus %></td>
+        <td><%= profile.user %></td>
+        <td><%= link_to 'Show', profile %></td>
+        <td><%= link_to 'Edit', edit_profile_path(profile) %></td>
+        <td><%= link_to 'Destroy', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Profile', new_profile_path %>
