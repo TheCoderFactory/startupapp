@@ -25,9 +25,11 @@ class BusinessesController < ApplicationController
   # POST /businesses.json
   def create
     @business = Business.new(business_params)
+    @business.owner_id = current_user
 
     respond_to do |format|
       if @business.save
+        
         format.html { redirect_to @business, notice: 'Business was successfully created.' }
         format.json { render :show, status: :created, location: @business }
       else
@@ -56,7 +58,7 @@ class BusinessesController < ApplicationController
   def destroy
     @business.destroy
     respond_to do |format|
-      format.html { redirect_to businesses_url, notice: 'Business was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Business was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -64,7 +66,7 @@ class BusinessesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_business
-      @business = Business.find(params[:id])
+      @business = Business.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

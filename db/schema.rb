@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141011030456) do
+ActiveRecord::Schema.define(version: 20141018030800) do
 
   create_table "businesses", force: true do |t|
     t.string   "name"
@@ -21,7 +21,10 @@ ActiveRecord::Schema.define(version: 20141011030456) do
     t.integer  "owner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "businesses", ["slug"], name: "index_businesses_on_slug", unique: true
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
